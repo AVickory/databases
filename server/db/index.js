@@ -6,14 +6,16 @@ var mysql = require('mysql');
 
 
 
-module.exports = function() {
-  var db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'chat'
-  });
-  return db;
-}
+
+var db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'chat'
+});
+  
+db.connect();
+
+module.exports = db;
 
 
